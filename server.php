@@ -28,7 +28,7 @@ if ($json["function"] == "getStocks") {
             "dividende" => 1.25,
             "marktkapitalisierung" => "35",
             "kursentwicklung" => "+12",
-            "beschreibung" => "Beschreibung 1",
+            "beschreibung" => "Führender Anbieter im Technologiebereich mit starkem Wachstumspotenzial.",
             "historie" => array_map(
                 function ($date) {
                     return [
@@ -69,7 +69,7 @@ if ($json["function"] == "getStocks") {
             "dividende" => 2.1,
             "marktkapitalisierung" => null,
             "kursentwicklung" => "-1.5",
-            "beschreibung" => "Beschreibung 2",
+            "beschreibung" => "Solide Anleihe mit stabiler Rendite, ideal für mittelrisikofreudige Anleger.",
             "historie" => array_map(
                 function ($date) {
                     return [
@@ -110,7 +110,7 @@ if ($json["function"] == "getStocks") {
             "dividende" => 1.05,
             "marktkapitalisierung" => "2",
             "kursentwicklung" => "-6.8",
-            "beschreibung" => "Beschreibung 3",
+            "beschreibung" => "Diversifizierter Mischfonds mit Fokus auf globale Märkte.",
             "historie" => array_map(
                 function ($date) {
                     return [
@@ -151,7 +151,7 @@ if ($json["function"] == "getStocks") {
             "dividende" => 2.3,
             "marktkapitalisierung" => "6.5",
             "kursentwicklung" => "+9.1",
-            "beschreibung" => "Beschreibung 4",
+            "beschreibung" => "Breit aufgestellter ETF im Energiesektor mit positiver Kursentwicklung.",
             "historie" => array_map(
                 function ($date) {
                     return [
@@ -192,7 +192,7 @@ if ($json["function"] == "getStocks") {
             "dividende" => 0.85,
             "marktkapitalisierung" => "18",
             "kursentwicklung" => "+15.4",
-            "beschreibung" => "Beschreibung 5",
+            "beschreibung" => "Innovatives Pharmaunternehmen mit starkem Fokus auf Forschung.",
             "historie" => array_map(
                 function ($date) {
                     return [
@@ -233,7 +233,7 @@ if ($json["function"] == "getStocks") {
             "dividende" => 0.75,
             "marktkapitalisierung" => null,
             "kursentwicklung" => "+0.4",
-            "beschreibung" => "Beschreibung 6",
+            "beschreibung" => "Staatlich abgesicherte Anleihe mit minimalem Risiko.",
             "historie" => array_map(
                 function ($date) {
                     return [
@@ -274,7 +274,7 @@ if ($json["function"] == "getStocks") {
             "dividende" => 3.0,
             "marktkapitalisierung" => "1.8",
             "kursentwicklung" => "-5.2",
-            "beschreibung" => "Beschreibung 7",
+            "beschreibung" => "Immobilienfonds mit stabilen Erträgen aus europäischen Märkten.",
             "historie" => array_map(
                 function ($date) {
                     return [
@@ -315,7 +315,7 @@ if ($json["function"] == "getStocks") {
             "dividende" => 1.5,
             "marktkapitalisierung" => "3.7",
             "kursentwicklung" => "+7.6",
-            "beschreibung" => "Beschreibung 8",
+            "beschreibung" => "Branchenweiter Konsumgüter-ETF mit ausgewogenem Risiko-Ertrags-Verhältnis.",
             "historie" => array_map(
                 function ($date) {
                     return [
@@ -356,7 +356,7 @@ if ($json["function"] == "getStocks") {
             "dividende" => 4.2,
             "marktkapitalisierung" => "48",
             "kursentwicklung" => "+11.9",
-            "beschreibung" => "Beschreibung 9",
+            "beschreibung" => "Automobilkonzern mit starkem Exportgeschäft und Dividendenhistorie.",
             "historie" => array_map(
                 function ($date) {
                     return [
@@ -397,7 +397,7 @@ if ($json["function"] == "getStocks") {
             "dividende" => 1.9,
             "marktkapitalisierung" => null,
             "kursentwicklung" => "-2.6",
-            "beschreibung" => "Beschreibung 10",
+            "beschreibung" => "Wandelanleihe mit mittlerem Risiko und solider Verzinsung.",
             "historie" => array_map(
                 function ($date) {
                     return [
@@ -438,7 +438,7 @@ if ($json["function"] == "getStocks") {
             "dividende" => 1.3,
             "marktkapitalisierung" => "1.1",
             "kursentwicklung" => "+3.3",
-            "beschreibung" => "Beschreibung 11",
+            "beschreibung" => "Rentenfonds mit niedriger Volatilität und konservativer Ausrichtung.",
             "historie" => array_map(
                 function ($date) {
                     return [
@@ -479,7 +479,7 @@ if ($json["function"] == "getStocks") {
             "dividende" => 1.7,
             "marktkapitalisierung" => "5.5",
             "kursentwicklung" => "+10.7",
-            "beschreibung" => "Beschreibung 12",
+            "beschreibung" => "Technologie-ETF mit Fokus auf wachstumsstarke Unternehmen.",
             "historie" => array_map(
                 function ($date) {
                     return [
@@ -520,7 +520,7 @@ if ($json["function"] == "getStocks") {
             "dividende" => 1.2,
             "marktkapitalisierung" => "9.4",
             "kursentwicklung" => "+6.5",
-            "beschreibung" => "Beschreibung 13",
+            "beschreibung" => "Chemieaktie mit stabilem Geschäft und moderatem KGV.",
             "historie" => array_map(
                 function ($date) {
                     return [
@@ -561,7 +561,7 @@ if ($json["function"] == "getStocks") {
             "dividende" => 4.1,
             "marktkapitalisierung" => null,
             "kursentwicklung" => "-4.9",
-            "beschreibung" => "Beschreibung 14",
+            "beschreibung" => "Hochzinsanleihe mit überdurchschnittlicher Rendite und erhöhtem Risiko.",
             "historie" => array_map(
                 function ($date) {
                     return [
@@ -602,7 +602,7 @@ if ($json["function"] == "getStocks") {
             "dividende" => 0.9,
             "marktkapitalisierung" => "3.3",
             "kursentwicklung" => "+8.4",
-            "beschreibung" => "Beschreibung 15",
+            "beschreibung" => "Aktienfonds mit Fokus auf wachstumsorientierte Unternehmen weltweit.",
             "historie" => array_map(
                 function ($date) {
                     return [

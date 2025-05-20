@@ -328,7 +328,7 @@ const loadSidebar = stock => {
 }
 
 async function fetchJson(fetchBody) {
-    const response = await fetch('/server.php', {
+    const response = await fetch('server.php', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
