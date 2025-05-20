@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mein Finanzblick – Ihr Helfer für eine sichere Kapitalanlage. Finden Sie passende Aktien, Fonds, Anleihen und ETFs.">
+    <meta name="keywords" content="Finanzen, Aktien, ETFs, Fonds, Anleihen, Kapitalanlage, Börse, Wertpapiere, Sicherheit">
+    <title>Mein Finanzblick - Ihr Helfer für eine sichere Kapitalanlage</title>
+    <link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/fontawesome/css/solid.css" rel="stylesheet">
+    <link href="/fontawesome/css/regular.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="page">
+        <header>
+            <div>
+                <div>
+                    <h1><i class="fa-solid fa-shield-halved"></i> Mein Finanzblick</h1>
+                    <span>Ihr Helfer für eine sichere Kapitalanlage</span>
+                </div>
+                <div>
+                    <label for="stock-favorites">Merkliste <i class="fa-regular fa-bookmark"></i> <i class="fa-solid fa-bookmark"></i></label>
+                    <input type="checkbox" id="stock-favorites" onclick="filterStocks()">
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="stock-search">
+                <div class="stock-information">
+                    <h2>Suche</h2>
+                    <p>Finden Sie einfach und gezielt Wertpapiere, die zu Ihren Vorstellungen passen. Nutzen Sie die Suche oder filtern Sie nach soliden Aktien und ETFs.</p>
+                </div>
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" id="stock-search" placeholder="Wertpapier suchen.." oninput="filterStocks()">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <select onchange="filterStocks()">
+                        <option value="nameAZ">Name (A-Z)</option>
+                        <option value="nameZA">Name (Z-A)</option>
+                        <option value="kursLH">Kurs (aufsteigend)</option>
+                        <option value="kursHL">Kurs (abstreigend)</option>
+                    </select>
+                </div>
+                <div class="stock-information">
+                    <span class="bold">Typ</span>
+                    <div class="stock-overview stock-typ">
+                        <div onclick="filterStocks(this)">
+                            <span>Aktie</span>
+                        </div>
+                        <div onclick="filterStocks(this)">
+                            <span>Fonds</span>
+                        </div>
+                        <div onclick="filterStocks(this)">
+                            <span>Anleihe</span>
+                        </div>
+                        <div onclick="filterStocks(this)">
+                            <span>ETF</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stock-information">
+                    <span class="bold">Anlagerisiko</span>
+                    <div class="stock-overview stock-anlagerisiko">
+                        <div onclick="filterStocks(this)">
+                            <span>Niedrig</span>
+                        </div>
+                        <div onclick="filterStocks(this)">
+                            <span>Mittel</span>
+                        </div>
+                        <div onclick="filterStocks(this)">
+                            <span>Hoch</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <template id="stock-item-template">
+                    <div class="stock-item">
+                        <div class="stock-header">
+                            <div class="stock-header-left">
+                                <div class="stock-header-right">
+                                    <h2 class="stock-name"><span></span></h2>
+                                    <div class="stock-branche"><span></span></div>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="stock-favorite" onclick="toggleFavorite(this)" data-tooltip="Zu Merkliste hinzufügen">
+                                    <i class="fa-solid fa-bookmark"></i>
+                                    <i class="fa-regular fa-bookmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="stock-overview">
+                            <div class="stock-typ" data-tooltip="Typ">
+                                <span></span>
+                            </div>
+                            <div class="stock-anlagerisiko" data-tooltip="Anlagerisiko">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="stock-content">
+                            <div>
+                                <div class="stock-kurs"><span></span> €</div>
+                                <div class="stock-kursentwicklung"><i class="fa-solid fa-arrow-up fa-rotate-by"></i> <span></span>% (Heute)</div>
+                            </div>
+                            <div class="stock-dividende">Dividende: <span></span> %</div>
+                            <div class="stock-marktkapitalisierung">Marktkapitalisierung: <span></span> Mrd €</div>
+                        </div>
+                        <div class="stock-footer">
+                            <button onclick="loadSidebar(this)">Details</button>
+                        </div>
+                    </div>
+                </template>
+                <div class="stock-grid">
+                </div>
+            </section>
+            <section class="stock-empty empty">
+                <p>Keine Wertpapiere gefunden. Passen Sie die Filter an.</p>
+            </section>
+        </main>
+        <footer>
+            <div>
+                <div>
+                    <p>&copy; 2025 Mein Finanzblick</p>
+                </div>
+                <div>
+                    <a href="">Impressum</a>
+                    <a href="">Datenschutz</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <button class="security"><i class="fa-solid fa-shield-halved"></i>
+    </button>
+    <div class="security-content stock-information">
+        <h2>Datenschutz & Sicherheit</h2>
+        <div class="stock-information">
+            <p>Ihre Daten sind bei uns sicher. Es ist keine Registrierung nötig, wir speichern keine persönlichen Daten und geben nichts an Dritte weiter. Ihre Merkliste bleibt ausschließlich auf Ihrem Gerät gespeichert.</p>
+            <p>Die Verbindung ist SSL-verschlüsselt. Auf Werbung und Tracking verzichten wir bewusst – für eine seriöse, ruhige Nutzererfahrung.</p>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="stock-header">
+            <div class="stock-header-left">
+                <div class="stock-header-right">
+                    <h2 class="stock-name"><span></span></h2>
+                    <span class="stock-branche"><span></span></span>
+                </div>
+            </div>
+            <div>
+                <button onclick="toggleSidebar()" class="stock-button"><i class="fa-solid fa-x"></i></button>
+            </div>
+        </div>
+        <div class="stock-content">
+            <div class="stock-information">
+                <span>Aktueller Kurs</span>
+                <div class="stock-kurs"><span></span> €</div>
+            </div>
+        </div>
+        <div class="stock-content stock-content-grid">
+            <div class="stock-information">
+                <span>Marktkapitalisierung</span>
+                <span class="stock-marktkapitalisierung"><span></span> Mrd €</span>
+            </div>
+            <div class="stock-information">
+                <span>Dividende</span>
+                <span class="stock-dividende"><span></span> %</span>
+            </div>
+            <div class="stock-information">
+                <span>KGV</span>
+                <span class="stock-kgv"><span></span></span>
+            </div>
+            <div class="stock-information">
+                <span>Trend</span>
+                <div class="stock-kursentwicklung"><i class="fa-solid fa-arrow-up fa-rotate-by"></i> <span></span>% (Heute)</div>
+            </div>
+            <div class="stock-information">
+                <span>Emittent</span>
+                <span class="stock-emittent"><span></span></span>
+            </div>
+            <div class="stock-information">
+                <span>Nächste Hauptversammlung</span>
+                <span class="stock-datum_naechste_hauptversammlung"><span></span></span>
+            </div>
+            <div class="stock-information">
+                <span>Typ</span>
+                <div class="stock-overview">
+                    <div class="stock-typ">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="stock-information">
+                <span>Anlagerisiko</span>
+                <div class="stock-overview">
+                    <div class="stock-anlagerisiko">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="stock-information">
+                <span>WKN</span>
+                <span class="stock-wkn"><span></span>
+                <button data-tooltip="WKN kopieren" class="copy" onclick=" copyText(this)"><i class="fa-solid fa-copy"></i><i class="fa-solid fa-check"></i></button>
+                </span>
+            </div>
+            <div class="stock-information">
+                <span>ISIN</span>
+                <span class="stock-isin"><span></span>
+                <button data-tooltip="ISIN kopieren" class="copy" onclick=" copyText(this)"><i class="fa-solid fa-copy"></i><i class="fa-solid fa-check"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="stock-content">
+            <div class="stock-information">
+                <span class="bold">Beschreibung</span>
+                <span class="stock-beschreibung"><span></span></span>
+            </div>
+            <div class="stock-information">
+                <span class="bold">Kursentwicklung</span>
+                <canvas class="stock-chart"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
